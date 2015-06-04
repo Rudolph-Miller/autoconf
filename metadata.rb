@@ -5,3 +5,5 @@ license          'MIT'
 description      'Installs/Configures autoconf'
 long_description 'Installs/Configures autoconf'
 version          '0.1.1'
+
+depends "m4"
