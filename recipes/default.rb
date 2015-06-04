@@ -1,6 +1,7 @@
 include_recipe "m4"
 
-version = node[:version]
+autoconf = node[:autoconf]
+version = autoconf[:version]
 
 remote_file "/tmp/autoconf-#{ version }.tar.gz" do
   source "http://ftp.gnu.org/gnu/autoconf/autoconf-#{ version }.tar.gz"
