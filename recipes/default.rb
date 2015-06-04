@@ -1,29 +1,20 @@
-#
-# Cookbook Name:: autoconf
-# Recipe:: default
-#
-# Copyright (C) 2015 Rudolph Miller
-#
-# Permission is hereby granted, free of charge, to any person obtaining
-# a copy of this software and associated documentation files (the
-# "Software"), to deal in the Software without restriction, including
-# without limitation the rights to use, copy, modify, merge, publish,
-# distribute, sublicense, and/or sell copies of the Software, and to
-# permit persons to whom the Software is furnished to do so, subject to
-# the following conditions:
-#
-# The above copyright notice and this permission notice shall be
-# included in all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-# LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-# OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-# WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-#
+include_recipe "m4"
 
-package 'autoconf' do
-  action :install
+version = node[:version]
+
+remote_file "/tmp/autoconf-#{ version }.tar.gz" do
+  source "http://ftp.gnu.org/gnu/autoconf/autoconf-#{ version }.tar.gz"
+  notifies :run, "bash[install-autoconf]", :immediately
+end
+
+bash "install-autoconf" do
+  user "root"
+  cwd "/tmp"
+  code <<-EOS
+    tar zxvf autoconf-#{ version }.tar.gz
+    cd autoconf-#{ version }
+    ./configure
+    make
+    make install
+  EOS
 end

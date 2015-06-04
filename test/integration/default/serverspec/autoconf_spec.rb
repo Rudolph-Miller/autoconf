@@ -2,6 +2,6 @@ require 'serverspec'
 
 set :backend, :exec
 
-describe package("autoconf") do
-    it { should be_installed }
+describe command("autoconf -v") do
+  its (:stdout) { should match /autoconf/ }
 end
