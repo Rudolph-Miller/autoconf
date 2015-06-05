@@ -1,13 +1,15 @@
 ---
 driver:
-  name: vagrant
+  name: docker
+  binary: /usr/local/bin/docker
+  socket: <%= ENV['DOCKER_HOST'] %>
 
 provisioner:
   name: chef_solo
 
 platforms:
-  - name: ubuntu-14.10
-  - name: centos-6.4
+  - name: ubuntu
+  - name: centos
 
 suites:
   - name: default
