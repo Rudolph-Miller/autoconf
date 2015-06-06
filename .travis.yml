@@ -11,8 +11,5 @@ install:
   - curl -sLo - https://raw.githubusercontent.com/moul/travis-docker/feature-network/install.sh | sh -xe
   - bundle install
 
-before_script:
-  - ./run docker -d
-
 script:
-  - bundle exec kitchen verify
+  - ./run bundle exec kitchen verify
