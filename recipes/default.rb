@@ -1,4 +1,5 @@
 include_recipe "m4"
+include_recipe "build-essential"
 
 autoconf = node[:autoconf]
 version = autoconf[:version]
