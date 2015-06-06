@@ -2,16 +2,14 @@ language: ruby
 
 sudo: true
 
-cache:
-  directories:
-    - vendor/bundle
+cache: bundler
 
 gemfile:
   - Gemfile
 
 install:
   - curl -sLo - http://j.mp/install-travis-docker | sh -xe
-  - bundle install --deployment
+  - bundle install
 
 before_script:
   - ./run docker -d
