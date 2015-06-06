@@ -8,7 +8,7 @@ gemfile:
   - Gemfile
 
 install:
-  - curl -sLo - https://github.com/moul/travis-docker/blob/feature-network/install.sh | sh -xe
+  - curl -sLo - https://raw.githubusercontent.com/moul/travis-docker/feature-network/install.sh | sh -xe
   - bundle install
 
 script:
