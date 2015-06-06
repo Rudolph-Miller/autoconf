@@ -7,6 +7,7 @@ gemfile:
 
 install:
   - curl -sLo - http://j.mp/install-travis-docker | sh -xe
+  - bundle install
 
 script:
   - bundle exec kitchen verify
