@@ -1,7 +1,6 @@
 ---
 driver:
   name: docker
-  binary: /usr/local/bin/docker
   socket: <%= ENV['DOCKER_HOST'] %>
 
 provisioner:
@@ -14,5 +13,6 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[autoconf::default]
+      - recipe[build-essential]
+      - recipe[autoconf]
     attributes:
