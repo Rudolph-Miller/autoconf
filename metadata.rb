@@ -8,3 +8,5 @@ version          '0.1.3'
 
 depends "build-essential"
 depends "m4"
+depends "package-tar"
+depends "tar"
