@@ -1,0 +1,10 @@
+language: ruby
+
+sudo: false
+cache: bundler
+
+gemfile:
+  - Gemfile
+
+script:
+  - bundle exec kitchen verify
