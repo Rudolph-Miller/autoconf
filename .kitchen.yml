@@ -1,7 +1,6 @@
 ---
 driver:
   name: docker
-  socket: <%= ENV['DOCKER_HOST'] %>
 
 provisioner:
   name: chef_solo
