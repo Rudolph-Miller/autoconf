@@ -12,7 +12,7 @@ install:
   - bundle install
 
 before_script:
-  - ./run docker -d
+  - docker -d
 
 script:
   - bundle exec kitchen verify
