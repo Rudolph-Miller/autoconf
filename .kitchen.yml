@@ -13,4 +13,16 @@ suites:
   - name: default
     run_list:
       - recipe[autoconf]
+  - name: version
+    run_list:
+      - recipe[autoconf]
     attributes:
+      autoconf:
+        version: 2.66
+  - name: prefix
+    run_list:
+      - recipe[autoconf]
+    attributes:
+      autoconf:
+        version: 2.59
+        prefix: "/opt/local"
