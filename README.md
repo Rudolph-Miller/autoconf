@@ -1,5 +1,5 @@
 # autoconf-cookbook
-[![Build Status](https://circleci.com/gh/Rudolph-Miller/autoconf.svg?style=shield)](https://circleci.com/Rudolph-Miller/autoconf)
+[![Build Status](https://circleci.com/gh/Rudolph-Miller/autoconf.svg?style=shield)](https://circleci.com/gh/Rudolph-Miller/autoconf)
 
 TODO: Enter the cookbook description here.
 
